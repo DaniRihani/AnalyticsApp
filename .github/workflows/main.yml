@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build, Push, and Run
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,3 +33,9 @@ jobs:
 
       - name: Push Docker Image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/analytics-app:latest
+
+      - name: Run Latest Docker Image
+        run: |
+          docker run -d --name analytics-app -p 8084:8084 ${{ secrets.DOCKERHUB_USERNAME }}/analytics-app:latest 
+          sleep 10  # Wait for the container to start
+          docker logs analytics-app  # Show container logs
