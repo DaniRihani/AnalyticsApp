@@ -1,5 +1,9 @@
+package org.example;
+
 import com.mongodb.client.*;
 import org.bson.Document;
+
+
 
 public class MongoDBUtils {
     private static final String CONNECTION_STRING = "mongodb://admin:admin@mongodb:27017";
