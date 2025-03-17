@@ -5,14 +5,27 @@ import java.util.List;
 
 public class StatisticsCalculator {
     public static double getMax(List<Double> values) {
-        return Collections.max(values);
+
+        if(!values.isEmpty()) {
+            return Collections.max(values);
+        }else {
+            return 0;
+        }
+
     }
 
     public static double getMin(List<Double> values) {
-        return Collections.min(values);
+        if(!values.isEmpty()) {
+            return Collections.min(values);
+        }else {
+            return 0;
+        }
     }
 
     public static double getMedian(List<Double> values) {
+        if (values.isEmpty()) {
+            return 0;
+        }
         Collections.sort(values);
         int size = values.size();
         if (size % 2 == 0) {

@@ -19,6 +19,6 @@ public class App
         double min = StatisticsCalculator.getMin(averages);
 
         // Store results in MongoDB
-       // MongoDBUtils.saveResults(max, median, min);
+        MongoDBUtils.saveResults(max, median, min);
     }
 }
