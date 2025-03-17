@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseUtils {
-    private static final String URL = "jdbc:mysql://md:3306/mydatabase";
+    private static final String URL = "jdbc:mysql://mysql-db:3306/mydatabase";
+
     private static final String USER = "appuser";
     private static final String PASSWORD = "apppassword";
 
